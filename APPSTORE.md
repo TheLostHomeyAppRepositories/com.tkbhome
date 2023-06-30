@@ -19,6 +19,7 @@ This app adds support for TKB Home devices in Homey.
 + TZ68-PLUS - Wallplug Switch (Z-Wave Plus) (all types)
 + TZ69 - Smart Energy Wallplug (Z-Wave Plus) (all types)
 + TZ74 - Dual Relay Switch Module
++ TZ78 - In-Wall Single Relay Switch (Z-Wave Plus) (all types)
 + TZ88 - Smart Energy Wallplug (Z-Wave Plus) (all types)
 
 ## Supported Languages:
@@ -44,6 +45,9 @@ All other manufacturers have this on at least 20% for this reason, so do keep th
 The voltage and amperage don't get reported on intervals, added polling for this (by default poll is off to save traffic).
 
 ## Change Log:
+**3.0.4:**
+- TZ78
+
 **2.0.5:**
 - Setting fixes to: TZ35 & TZ36
 

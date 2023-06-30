@@ -4,7 +4,7 @@
     "en": "TKB Home"
   },
   "sdk": 3,
-  "version": "3.0.3",
+  "version": "3.0.4",
   "compatibility": ">=5.0.0",
   "description": {
     "en": "TKB Home devices for Homey",
@@ -41,6 +41,10 @@
       {
         "name": "Remco Mengers",
         "email": "caseda08@hotmail.com"
+      },
+      {
+        "name": "Magnus Pernemark",
+        "email": "magnus.pernemark@gmail.com"
       }
     ]
   },

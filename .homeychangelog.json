@@ -10,5 +10,8 @@
   },
   "3.0.3": {
     "en": "Removed invalid TZ88 flow card"
+  },
+  "3.0.4": {
+    "en": "Added TZ78"
   }
 }

@@ -1,0 +1,125 @@
+[
+  {
+    "id": "led_behaviour",
+    "type": "dropdown",
+    "zwave": {
+      "index": 1,
+      "size": 1
+    },
+    "label": {
+      "en": "LED Behaviour",
+      "nl": "LED Gedrag"
+    },
+    "hint": {
+      "en": "Determine the behaviour of the LED.",
+      "nl": "Bepaal het gedrag van de LED."
+    },
+    "value": "0",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "LED indicates the socket is off.",
+          "nl": "LED geeft aan het stopcontact uit is."
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "LED indicates the socket is on",
+          "nl": "LED geeft aan het stopcontact aan is"
+        }
+      }
+    ]
+  },
+  {
+    "id": "memory_function",
+    "type": "dropdown",
+    "zwave": {
+      "index": 2,
+      "size": 1
+    },
+    "label": {
+      "en": "Memory Function",
+      "nl": "Geheugenfunctie"
+    },
+    "hint": {
+      "en": "Determines if the switch should remember its state after power loss.",
+      "nl": "Bepaalt of de schakelaar zijn status moet onthouden na stroomuitval."
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "No switch memory function",
+          "nl": "Geen schakelaargeheugenfunctie"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "The socket status is same as before when power ON",
+          "nl": "De socketstatus is hetzelfde als voorheen wanneer de stroom AAN is"
+        }
+      }
+    ]
+  },
+  {
+    "id": "edge_or_pulse_mode",
+    "type": "dropdown",
+    "zwave": {
+      "index": 3,
+      "size": 1
+    },
+    "label": {
+      "en": "Edge or Pulse Mode",
+      "nl": "Edge of Pulse Modus"
+    },
+    "hint": {
+      "en": "Determines the switch mode.",
+      "nl": "Bepaalt de schakelmodus."
+    },
+    "value": "3",
+    "values": [
+      {
+        "id": "1",
+        "label": {
+          "en": "Edge Mode",
+          "nl": "Edge Modus"
+        }
+      },
+      {
+        "id": "2",
+        "label": {
+          "en": "Pulse Mode",
+          "nl": "Pulse Modus"
+        }
+      },
+      {
+        "id": "3",
+        "label": {
+          "en": "Edge-toggle Mode",
+          "nl": "Edge-toggle Modus"
+        }
+      }
+    ]
+  },
+  {
+    "id": "poll_interval",
+    "type": "number",
+    "attr": {
+      "min": 0,
+      "max": 86400
+    },
+    "value": 0,
+    "label": {
+      "en": "Manual State Interval",
+      "nl": "Handmatig Status Interval"
+    },
+    "hint": {
+      "en": "Determine the amount of seconds homey askes for the state, needed if you use the manual button as well.\nRange: 0 (Off), 60 - 86400 seconds",
+      "nl": "Bepaal het aantal seconden dat homey om de status vraagt, nodig als je de handmatig knop ook gebruikt.\nBereik: 0 (Off), 60 - 86400 seconden"
+    }
+  }
+]

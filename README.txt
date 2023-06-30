@@ -7,7 +7,7 @@ Devices are added based on assumptions and full working of every device
 is not guaranteed.
 
 --- Current Supported devices: ---
-TSM02, TSM10, TSP01, TZ04, TZ35, TZ36, TZ37, TZ55, TZ56, TZ57, TZ65, TZ66, TZ67, TZ67-PLUS, TZ68, TZ68-PLUS, TZ69, TZ74, TZ88.
+TSM02, TSM10, TSP01, TZ04, TZ35, TZ36, TZ37, TZ55, TZ56, TZ57, TZ65, TZ66, TZ67, TZ67-PLUS, TZ68, TZ68-PLUS, TZ69, TZ74, TZ78, TZ88.
 
 ----- Device Specific Notes: -----
 TZ35/TZ55/TZ65:
