@@ -51,40 +51,8 @@ class TZ35Dimmer extends ZwaveDevice {
 
 			const CC_MultilevelSwitch = this.getCommandClass('SWITCH_MULTILEVEL');
 			if (!(CC_MultilevelSwitch instanceof Error) && typeof CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET === 'function') {
-				setTimeout(() => {
-					try {
-					CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET()
-						.then(result => {
-							this.log(result);
-							if (result.hasOwnProperty('Value (Raw)')) {
-								let raw = result['Value (Raw)'][0]
-								this.setCapabilityValue('onoff', raw > 0);
-								raw = (raw === 255) ? 1 : raw / 99
-								raw = raw > 1 ? 1 : raw
-								this.setCapabilityValue('dim', raw);
-							}
-						})
-						.catch(err => {
-							// timeout seems to be a common issue with multilevel get
-						});
-					} catch(err) {
-						// timeout seems to be a common issue with multilevel get
-					}
-				}, 2000);
-			}
-
-			singlePress = true;
-			setTimeout(() => {
-				singlePress = false;
-			}, 200);
-		});
-
-		this.node.on('_applicationUpdate', nodeInformationFrame => {
-
-			const CC_MultilevelSwitch = this.getCommandClass('SWITCH_MULTILEVEL');
-			if (!(CC_MultilevelSwitch instanceof Error) && typeof CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET === 'function') {
-				setTimeout(() => {
-					try {
+				try {
+					setTimeout(() => {
 						CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET()
 							.then(result => {
 								this.log(result);
@@ -99,10 +67,42 @@ class TZ35Dimmer extends ZwaveDevice {
 							.catch(err => {
 								// timeout seems to be a common issue with multilevel get
 							});
-					} catch (err) {
-						// timeout seems to be a common issue with multilevel get
-					}
-				}, 2000);
+					}, 2000);
+				} catch(err) {
+					// timeout seems to be a common issue with multilevel get
+				}
+			}
+
+			singlePress = true;
+			setTimeout(() => {
+				singlePress = false;
+			}, 200);
+		});
+
+		this.node.on('_applicationUpdate', nodeInformationFrame => {
+
+			const CC_MultilevelSwitch = this.getCommandClass('SWITCH_MULTILEVEL');
+			if (!(CC_MultilevelSwitch instanceof Error) && typeof CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET === 'function') {
+				try {
+					setTimeout(() => {
+						CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET()
+							.then(result => {
+								this.log(result);
+								if (result.hasOwnProperty('Value (Raw)')) {
+									let raw = result['Value (Raw)'][0]
+									this.setCapabilityValue('onoff', raw > 0);
+									raw = (raw === 255) ? 1 : raw / 99
+									raw = raw > 1 ? 1 : raw
+									this.setCapabilityValue('dim', raw);
+								}
+							})
+							.catch(err => {
+								// timeout seems to be a common issue with multilevel get
+							});
+					}, 2000);
+				} catch (err) {
+					// timeout seems to be a common issue with multilevel get
+				}
 			}
 
 			singlePress = true;
