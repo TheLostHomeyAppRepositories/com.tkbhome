@@ -14,16 +14,15 @@ class TZ35Dimmer extends ZwaveDevice {
 
 				const CC_MultilevelSwitch = this.getCommandClass('SWITCH_MULTILEVEL');
 				if (!(CC_MultilevelSwitch instanceof Error) && typeof CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET === 'function') {
-					setTimeout(() => {
-						try {
+					try {
+						setTimeout(() => {
 							CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET();
-						} catch(err) {
-							console.log("Timeout calling SWITCH_MULTILEVEL_GET()");
-							// timeout seems to be a common issue with multilevel get
-						}
-					}, 2000);
+						}, 2000);
+					} catch (err) {
+						console.log("Timeout calling SWITCH_MULTILEVEL_GET()");
+						// timeout seems to be a common issue with multilevel get
+					}
 				}
-
 				return {
 					Value: (value) ? 'on/enable' : 'off/disable',
 				};
@@ -58,9 +57,15 @@ class TZ35Dimmer extends ZwaveDevice {
 						.then(result => {
 							this.log(result);
 							if (result.hasOwnProperty('Value (Raw)')) {
-								this.setCapabilityValue('onoff', result['Value (Raw)'][0] > 0);
-								this.setCapabilityValue('dim', (result['Value (Raw)'][0] === 255) ? 1 : result['Value (Raw)'][0] / 99);
+								let raw = result['Value (Raw)'][0]
+								this.setCapabilityValue('onoff', raw > 0);
+								raw = (raw === 255) ? 1 : raw / 99
+								raw = raw > 1 ? 1 : raw
+								this.setCapabilityValue('dim', raw);
 							}
+						})
+						.catch(err => {
+							// timeout seems to be a common issue with multilevel get
 						});
 					} catch(err) {
 						// timeout seems to be a common issue with multilevel get
@@ -84,9 +89,15 @@ class TZ35Dimmer extends ZwaveDevice {
 							.then(result => {
 								this.log(result);
 								if (result.hasOwnProperty('Value (Raw)')) {
-									this.setCapabilityValue('onoff', result['Value (Raw)'][0] > 0);
-									this.setCapabilityValue('dim', (result['Value (Raw)'][0] === 255) ? 1 : result['Value (Raw)'][0] / 99);
+									let raw = result['Value (Raw)'][0]
+									this.setCapabilityValue('onoff', raw > 0);
+									raw = (raw === 255) ? 1 : raw / 99
+									raw = raw > 1 ? 1 : raw
+									this.setCapabilityValue('dim', raw);
 								}
+							})
+							.catch(err => {
+								// timeout seems to be a common issue with multilevel get
 							});
 					} catch (err) {
 						// timeout seems to be a common issue with multilevel get

@@ -60,6 +60,9 @@ class TZ65Dimmer extends ZwaveDevice {
 									this.setCapabilityValue('onoff', result['Value (Raw)'][0] > 0);
 									this.setCapabilityValue('dim', (result['Value (Raw)'][0] === 255) ? 1 : result['Value (Raw)'][0] / 99);
 								}
+							})
+							.catch(err => {
+								// timeout seems to be a common issue with multilevel get
 							});
 					} catch(err) {
 						// timeout seems to be a common issue with multilevel get
@@ -86,6 +89,9 @@ class TZ65Dimmer extends ZwaveDevice {
 									this.setCapabilityValue('onoff', result['Value (Raw)'][0] > 0);
 									this.setCapabilityValue('dim', (result['Value (Raw)'][0] === 255) ? 1 : result['Value (Raw)'][0] / 99);
 								}
+							})
+							.catch(err => {
+								// timeout seems to be a common issue with multilevel get
 							});
 					} catch(err) {
 						// timeout seems to be a common issue with multilevel get
