@@ -16,9 +16,12 @@ class TZ67PlusPlugDimmer extends ZwaveDevice {
 				if (!(CC_MultilevelSwitch instanceof Error) && typeof CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET === 'function') {
 					try {
 						setTimeout(() => {
-							CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET();
+							CC_MultilevelSwitch.SWITCH_MULTILEVEL_GET()
+								.catch(err => {
+									// timeout seems to be a common issue with multilevel get
+								});
 						}, 2000);
-					} catch(err) {
+					} catch (unused) {
 						console.log("Timeout calling SWITCH_MULTILEVEL_GET()");
 						// timeout seems to be a common issue with multilevel get
 					}
