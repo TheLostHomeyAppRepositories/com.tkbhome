@@ -3324,6 +3324,7 @@
       },
       "class": "thermostat",
       "capabilities": [
+        "onoff",
         "measure_temperature",
         "target_temperature"
       ],
@@ -3349,8 +3350,8 @@
         "learnmode": {
           "image": "/drivers/TZE93/assets/learnmode.svg",
           "instruction": {
-            "en": "Make sure the thermostat is in off state. \nPress 3 times within 1,5 sec on the UP button.",
-            "nl": "Zorg dat de thermostaat uit is. \nDruk dan 3x binnen 1,5 sec op de omhoog knop."
+            "en": "Make sure the thermostat is in off state. \nPress 3 times within 1,5 sec on the left hand menu button.",
+            "nl": "Zorg dat de thermostaat uit is. \nDruk dan 3x binnen 1,5 sec op de Menuknop aan de linkerkant."
           }
         },
         "associationGroups": [
