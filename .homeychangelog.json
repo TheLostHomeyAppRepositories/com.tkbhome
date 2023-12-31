@@ -22,5 +22,8 @@
   },
   "3.1.0": {
     "en": "Added TZE93 Thermostat"
+  },
+  "3.1.1": {
+    "en": "Proper images and pairing instructions for TZE93, should support onoff capability"
   }
 }
