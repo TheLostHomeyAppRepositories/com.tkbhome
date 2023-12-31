@@ -25,5 +25,8 @@
   },
   "3.1.1": {
     "en": "Proper images and pairing instructions for TZE93, should support onoff capability"
+  },
+  "3.1.2": {
+    "en": "Added missing registerCapability in TZ93 driver"
   }
 }
