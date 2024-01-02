@@ -15,7 +15,7 @@ class TZE93 extends ZwaveDevice {
 		//print the node's info to the console
 		this.printNode();
 
-		this.registerCapability('onoff', 'THERMOSTAT_MODE');
+		this.registerCapability('thermostat_mode', 'THERMOSTAT_MODE');
 
 		this.registerCapability('measure_temperature', 'SENSOR_MULTILEVEL', {
 			getOpts: {
