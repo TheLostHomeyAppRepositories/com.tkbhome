@@ -28,5 +28,8 @@
   },
   "3.1.2": {
     "en": "Added missing registerCapability in TZ93 driver"
+  },
+  "3.1.3": {
+    "en": "Switched COMMAND_CLASS for onoff capability"
   }
 }
