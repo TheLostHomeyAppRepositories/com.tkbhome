@@ -37,5 +37,8 @@
   },
   "3.1.5": {
     "en": "Another attempt to get onoff working"
+  },
+  "3.1.6": {
+    "en": "Added icons for TZ93"
   }
 }
