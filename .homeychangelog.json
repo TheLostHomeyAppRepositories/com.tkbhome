@@ -40,5 +40,8 @@
   },
   "3.1.6": {
     "en": "Added icons for TZ93"
+  },
+  "3.1.7": {
+    "en": "Changed onoff capability to use SWITCH_ALL not BASIC command class"
   }
 }
