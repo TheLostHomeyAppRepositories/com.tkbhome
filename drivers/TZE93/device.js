@@ -1,9 +1,7 @@
 'use strict';
 
-const Homey = require('homey');
 const ZwaveDevice = require('homey-zwavedriver').ZwaveDevice;
 
-const { ManagerZwave } = require('homey');
 
 class TZE93 extends ZwaveDevice {
 
@@ -37,7 +35,7 @@ class TZE93 extends ZwaveDevice {
 							this.log('[TZE93] Turning on detected. Value in the mobile app is:', mobileSetpoint);
 
 							if (mobileSetpoint && this.node.CommandClass.COMMAND_CLASS_THERMOSTAT_SETPOINT) {
-								
+
 								// COMMON WRITE FUNCTION (To avoid code duplication)
 								const sendTemperatureToHardware = async () => {
 									try {
@@ -53,7 +51,7 @@ class TZE93 extends ZwaveDevice {
 								};
 
 								// --- BURST SEQUENCE FOR MAXIMUM SPEED AND STABILITY ---
-								
+
 								// 1st ATTEMPT: Lightning fast (only 300ms after pressing). If the chip keeps up, the change happens immediately.
 								setTimeout(() => {
 									this.log('[TZE93] Launching 1st attempt at lightning-fast temperature overwrite (300ms)...');
@@ -73,7 +71,7 @@ class TZE93 extends ZwaveDevice {
 					}
 					return isTurnedOn;
 				}
-				return null;
+				return 0;
 			}
 		});
 
@@ -84,7 +82,7 @@ class TZE93 extends ZwaveDevice {
 				getOnStart: true,
 			},
 		});
-        
+
 		this.registerCapability('target_temperature', 'THERMOSTAT_SETPOINT', {
 			getOpts: {
 				getOnStart: true,

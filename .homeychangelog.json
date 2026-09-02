@@ -43,5 +43,8 @@
   },
   "3.1.7": {
     "en": "Changed onoff capability to use SWITCH_ALL not BASIC command class"
+  },
+  "3.1.8": {
+    "en": "Fix TZE93 thermostat: Add missing onoff capability listener with BASIC report synchronization"
   }
 }
