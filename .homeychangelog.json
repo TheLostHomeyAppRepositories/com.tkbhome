@@ -46,5 +46,8 @@
   },
   "3.1.8": {
     "en": "Fix TZE93 thermostat: Add missing onoff capability listener with BASIC report synchronization"
+  },
+  "3.1.9": {
+    "en": "Return 0 rather than null from capability listener"
   }
 }
